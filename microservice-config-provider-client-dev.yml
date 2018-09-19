@@ -1,1 +1,38 @@
 
+server:
+  port: 9999
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.mooc.entity
+  mapper-locations: classpath*:mybatis/mapper/*.xml
+spring:
+  profiles:
+    active: dev
+  application:
+    name: microservice-config-provider-client
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloud01?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-idle: 5
+      max-wait-millis: 200
+  jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
+        default-property-inclusion: non_null
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka9999.com:9999/eureka/
+  instance:
+    #自定义注册中心的微服务实例名称
+    instance-id: provider-9999.com
+    #访问路径可以显示IP
+    prefer-ip-address: true
+
+
