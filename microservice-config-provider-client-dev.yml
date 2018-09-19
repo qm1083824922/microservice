@@ -28,7 +28,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka9999.com:9999/eureka/
+      defaultZone: http://eureka8888.com:8888/eureka/
   instance:
     #自定义注册中心的微服务实例名称
     instance-id: provider-9999.com
