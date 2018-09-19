@@ -1,1 +1,16 @@
 
+server:
+  port: 8888
+spring:
+  profiles:
+    active: dev
+  application:
+    name: microservice-config-client
+eureka:
+  instance:
+    hostname: eureka8888.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka8888.com/eureka/
